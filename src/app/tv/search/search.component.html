@@ -1,3 +1,25 @@
-<p>
-  search works!
-</p>
+<div class="row">
+  <section class="col col-3">
+    <h2 class="h3">Bookmarks</h2>
+    <div class="row">
+      <tm-poster *ngFor="let show of bookmarks" class="col col-6" [show]="show"></tm-poster>
+    </div>
+  </section>
+
+  <section class="col">
+    <h1 class="h4">Search albums</h1>
+    <form class="input-group mb-3">
+      <input [(ngModel)]="query" name="query" type="search" class="form-control">
+      <div class="input-group-append">
+        <button class="btn btn-primary" (click)="search(query)">Search</button>
+      </div>
+    </form>
+
+    <div class="row">
+      <div *ngFor="let show of shows" class="col col-4">
+        <tm-poster [show]="show"></tm-poster>
+        <button class="btn btn-primary" (click)="saveBookmark(show)" [disabled]="isBookmarked(show)">Save</button>
+      </div>
+    </div>
+  </section>
+</div>
