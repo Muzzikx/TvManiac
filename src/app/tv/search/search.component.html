@@ -1,24 +1,35 @@
 <div class="row">
   <section class="col col-3">
-    <h2 class="h3">Bookmarks</h2>
-    <div class="row">
-      <tm-poster *ngFor="let show of bookmarks" class="col col-6" [show]="show"></tm-poster>
-    </div>
+    <ng-container *ngIf="bookmarks$ | async as bookmarks">
+      <h2 class="h5" *ngIf="bookmarksLoaded$ | async; else bookmarksPlaceholder">
+        Bookmarks ({{bookmarks.length}})
+      </h2>
+      <ng-template #bookmarksPlaceholder>
+        <h2 class="h5 text-muted">loading bookmarks..</h2>
+      </ng-template>
+      <div class="row">
+        <tm-poster *ngFor="let show of bookmarks" class="col col-6" [show]="show">
+          <tm-bookmark-remove [show]="show"></tm-bookmark-remove>
+        </tm-poster>
+      </div>
+    </ng-container>
   </section>
 
   <section class="col">
     <h1 class="h4">Search albums</h1>
-    <form class="input-group mb-3">
-      <input [(ngModel)]="query" name="query" type="search" class="form-control">
+    <form class="input-group mb-3" [formGroup]="searchForm">
+      <input name="query" formControlName="query" type="search" class="form-control">
       <div class="input-group-append">
-        <button class="btn btn-primary" (click)="search(query)">Search</button>
+        <button [disabled]="searchForm.get('query').errors?.required" class="btn btn-primary" (click)="search(searchForm.value.query)">Search</button>
       </div>
     </form>
 
     <div class="row">
       <div *ngFor="let show of shows" class="col col-4">
-        <tm-poster [show]="show"></tm-poster>
-        <button class="btn btn-primary" (click)="saveBookmark(show)" [disabled]="isBookmarked(show)">Save</button>
+        <tm-poster [show]="show">
+          <tm-bookmark-add [show]="show"></tm-bookmark-add>
+          <tm-bookmark-remove [show]="show"></tm-bookmark-remove>
+        </tm-poster>
       </div>
     </div>
   </section>

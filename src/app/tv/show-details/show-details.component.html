@@ -1,0 +1,27 @@
+<div class="row">
+  <tm-poster class="col col-4" [show]="show"></tm-poster>
+
+  <section class="col">
+    <h1 class="h2">{{show.name}}</h1>
+    <div [innerHTML]="show.summary"></div>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>number</th>
+        <th>title</th>
+        <th>air date</th>
+      </tr>
+      </thead>
+      <thead>
+      <tr *ngFor="let episode of show._embedded.episodes">
+        <td>{{episode | episodies}}</td>
+        <td>{{episode.name}}</td>
+        <td>{{episode.airdate | date}}</td>
+      </tr>
+      </thead>
+    </table>
+  </section>
+</div>
+
+<!--<pre>{{show | json}}</pre>-->

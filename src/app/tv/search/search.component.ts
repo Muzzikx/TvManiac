@@ -2,6 +2,11 @@ import {Component} from '@angular/core';
 import {TvMazeService} from '../tv-maze.service';
 import {Show} from '../tv.models';
 import {BookmarksService} from '../../bookmarks/bookmarks.service';
+import {Observable} from 'rxjs';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {debounceTime, filter, tap} from 'rxjs/operators';
+import {startsWithLetterValidator} from '../../shared/forms/starts-with-letter.validator';
+import {usernameAvailableValidator} from '../../shared/forms/username-available.validator';
 
 @Component({
   selector: 'tm-search',
@@ -10,10 +15,17 @@ import {BookmarksService} from '../../bookmarks/bookmarks.service';
 })
 export class SearchComponent {
   shows: Show[] = [];
+  bookmarks$: Observable<Show[]>;
+  bookmarksLoaded$: Observable<boolean>;
+  searchForm: FormGroup;
 
   constructor(private tv: TvMazeService,
-              private bs: BookmarksService<Show>) {
-    this.search('super');
+              private bs: BookmarksService<Show>,
+              private fb: FormBuilder) {
+    this.initForm();
+    this.search('mr robot');
+    this.bookmarks$ = this.bs.getAll();
+    this.bookmarksLoaded$ = this.bs.loaded$;
   }
 
   search(query: string) {
@@ -21,17 +33,27 @@ export class SearchComponent {
       .subscribe(shows => this.shows = shows);
   }
 
-  get bookmarks(): Show[] {
-    console.count();
-    return this.bs.getAll() as Show[];
-  }
+  private initForm() {
+    this.searchForm = this.fb.group({
+      query: ['batman',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          startsWithLetterValidator
+        ],
+        [
+          usernameAvailableValidator
+        ],
+      ],
+    });
 
-  saveBookmark(show: Show) {
-    this.bs.add(show);
+    this.searchForm.get('query')
+      .valueChanges
+      .pipe(
+        debounceTime(200),
+        tap(() => console.log(this.searchForm.get('query').errors)),
+        filter(() => this.searchForm.valid)
+      )
+      .subscribe(v => this.search(v));
   }
-
-  isBookmarked(show: Show): boolean {
-    return this.bs.has(show.id);
-  }
-
 }

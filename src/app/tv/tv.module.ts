@@ -3,21 +3,25 @@ import {CommonModule} from '@angular/common';
 import {SearchComponent} from './search/search.component';
 import {TvMazeService} from './tv-maze.service';
 import {HttpClientModule} from '@angular/common/http';
-import { PosterComponent } from './poster/poster.component';
-import {FormsModule} from '@angular/forms';
-import { BookmarksModule } from '../bookmarks/bookmarks.module';
+import {PosterComponent} from './poster/poster.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {BookmarksModule} from '../bookmarks/bookmarks.module';
+import {ShowDetailsComponent} from './show-details/show-details.component';
+import {RouterModule} from '@angular/router';
+import {EpisodiesPipe} from './episodies.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
-    FormsModule,
+    ReactiveFormsModule,
     BookmarksModule,
+    RouterModule
   ],
   providers: [
     TvMazeService
   ],
-  declarations: [SearchComponent, PosterComponent]
+  declarations: [SearchComponent, PosterComponent, ShowDetailsComponent, EpisodiesPipe]
 })
 export class TvModule {
 }

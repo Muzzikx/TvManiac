@@ -3,6 +3,27 @@ export interface ShowResponse {
   show: Show;
 }
 
+export interface ShowDetails extends Show {
+  _embedded: Embedded;
+}
+export interface Embedded {
+  episodes: Episode[];
+}
+
+export interface Episode {
+  id: number;
+  url: string;
+  name: string;
+  season: number;
+  number: number;
+  airdate: string;
+  airtime: string;
+  airstamp: string;
+  runtime: number;
+  image?: any;
+  summary?: string;
+}
+
 export interface Show {
   id: number;
   url: string;

@@ -2,12 +2,13 @@
   <div class="container">
     <a class="navbar-brand" href="#">TV Maniac</a>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
         <li *ngFor="let item of menu"
             class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: item.exact}">
           <a class="nav-link" [routerLink]="item.path">{{item.label}}</a>
         </li>
       </ul>
+      <tm-loader class="nav-item text-white">loading...</tm-loader>
     </div>
   </div>
 </nav>
