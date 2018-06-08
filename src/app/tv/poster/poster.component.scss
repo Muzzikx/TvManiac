@@ -1,7 +1,20 @@
+@import "variables";
+
 :host {
   display: block;
 }
 
+img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 h2 {
   font-weight: normal;
+}
+
+a {
+  color: darken($main-color, 15);
 }

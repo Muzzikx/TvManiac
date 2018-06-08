@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {BookmarksService} from '../bookmarks.service';
-import {Bookmark} from '../bookmarks.models';
+import {Bookmark} from '@models';
 
 @Component({
   selector: 'tm-bookmark-add',

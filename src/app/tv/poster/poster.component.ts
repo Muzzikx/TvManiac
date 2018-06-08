@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input, OnChanges, ViewEncapsulation} from '@angular/core';
-import {Show} from '../tv.models';
+import {Show} from '@models';
 import {get} from 'lodash';
 import {ActivatedRoute} from '@angular/router';
 import {ShowDetailsComponent} from '../show-details/show-details.component';

@@ -3,13 +3,18 @@
     <h1>Contact us</h1>
 
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" #emailRef="ngModel" email required minlength="3" name="email_" [(ngModel)]="contact.email"
-             id="email" [class.is-invalid]="showErrors(emailRef)" class="form-control">
+      <label for="email">
+        Email:
+        <span class="text-muted" *ngIf="emailRef.pending">(checking..)</span>
+      </label>
+      <input type="email" #emailRef="ngModel" [tmStartsWithLetter]="false" required minlength="3" name="email_" [(ngModel)]="contact.email"
+             id="email" [class.is-invalid]="showErrors(emailRef)" class="form-control" tmUsernameAvailable>
       <div class="invalid-feedback" *ngIf="showErrors(emailRef)">
         <div *ngIf="emailRef.errors?.email">This is bad email</div>
         <div *ngIf="emailRef.errors?.required">This is required</div>
         <div *ngIf="emailRef.errors?.minlength">This should be longer</div>
+        <div *ngIf="emailRef.errors?.startsWithLetter">This should start with a capital letter</div>
+        <div *ngIf="emailRef.errors?.usernameAvailable">This username is taken</div>
       </div>
     </div>
 
@@ -20,6 +25,6 @@
       <div *ngIf="showErrors(messageRef)" class="invalid-feedback">This should be longer</div>
     </div>
 
-    <button class="btn btn-primary float-right" [disabled]="formRef.invalid">Send</button>
+    <button class="btn btn-primary float-right" (tmSubmitIfValid)="submit()">Send</button>
   </form>
 </div>

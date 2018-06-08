@@ -1,13 +1,14 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {SearchComponent} from './tv/search/search.component';
 import {ContactComponent} from './pages/contact/contact.component';
 import {Page404Component} from './pages/page404/page404.component';
 import {ShowDetailsComponent} from './tv/show-details/show-details.component';
 import {ShowDetailsResolver} from './tv/show-details/show-details.resolver';
-import {ShowDetails} from './tv/tv.models';
+import {ShowDetails} from '@models';
 import {HasRolesGuard} from './shared/has-roles.guard';
+import {LazyRoute} from '@angular/compiler';
 
 export interface ShowDetailsParams {
   id: string;
@@ -35,11 +36,15 @@ const routes: Routes = [
     ]
   },
   {path: 'contact', component: ContactComponent},
+  {path: 'settings', loadChildren: './settings/settings.module#SettingsModule'},
   {path: '**', component: Page404Component},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: false})],
+  imports: [RouterModule.forRoot(routes, {
+    useHash: false,
+    preloadingStrategy: PreloadAllModules
+  })],
   providers: [ShowDetailsResolver],
   exports: [RouterModule]
 })

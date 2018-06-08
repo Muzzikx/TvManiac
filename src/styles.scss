@@ -1,2 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+$btn-border-radius: 0;
+$btn-border-radius-lg: 0;
+$btn-border-radius-sm: 0;
+
+$danger: darken(red, 15);
+
 @import "~bootstrap/scss/bootstrap";
+
+.bookmarked {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.bookmarked.transparent::before {
+  opacity: 0.4;
+}
+
+.bookmarked::before {
+  content: 'bookmarked';
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: -24px;
+  transform: rotate(45deg);
+  background: #3273dc;
+  color: #eee;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: bold;
+  width: 120px;
+  text-align: center;
+  box-shadow: -1px 1px 3px rgba(#000, 0.7);
+}

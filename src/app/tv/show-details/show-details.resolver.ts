@@ -1,6 +1,6 @@
 import {ActivatedRouteSnapshot, Resolve} from '@angular/router';
 import {Observable} from 'rxjs';
-import {ShowDetails} from '../tv.models';
+import {ShowDetails} from '@models';
 import {ShowDetailsParams} from '../../app-routing.module';
 import {TvMazeService} from '../tv-maze.service';
 import {Injectable} from '@angular/core';

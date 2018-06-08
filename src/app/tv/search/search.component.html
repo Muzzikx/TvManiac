@@ -18,7 +18,7 @@
   <section class="col">
     <h1 class="h4">Search albums</h1>
     <form class="input-group mb-3" [formGroup]="searchForm">
-      <input name="query" formControlName="query" type="search" class="form-control">
+      <input autocomplete="off" name="query" formControlName="query" type="search" class="form-control">
       <div class="input-group-append">
         <button [disabled]="searchForm.get('query').errors?.required" class="btn btn-primary" (click)="search(searchForm.value.query)">Search</button>
       </div>
@@ -26,9 +26,9 @@
 
     <div class="row">
       <div *ngFor="let show of shows" class="col col-4">
-        <tm-poster [show]="show">
-          <tm-bookmark-add [show]="show"></tm-bookmark-add>
-          <tm-bookmark-remove [show]="show"></tm-bookmark-remove>
+        <tm-poster [show]="show" #bookmarkedRef="bookmarked" [tmBookmarked]="show">
+          <tm-bookmark-add *ngIf="!bookmarkedRef.isBookmarked" [show]="show"></tm-bookmark-add>
+          <tm-bookmark-remove *ngIf="bookmarkedRef.isBookmarked" [show]="show"></tm-bookmark-remove>
         </tm-poster>
       </div>
     </div>

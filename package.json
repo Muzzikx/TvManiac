@@ -5,10 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --source-map=false",
+    "playground": "angular-playground",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "backed": "json-server -w db.json"
+    "backend": "json-server -w db.json"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/lodash": "^4.14.109",
     "@types/node": "~8.9.4",
+    "angular-playground": "^5.0.1",
     "codelyzer": "~4.2.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",

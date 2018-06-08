@@ -50,6 +50,61 @@
       }
     },
     {
+      "id": 1871,
+      "url": "http://www.tvmaze.com/shows/1871/mr-robot",
+      "name": "Mr. Robot",
+      "type": "Scripted",
+      "language": "English",
+      "genres": [
+        "Drama",
+        "Crime",
+        "Thriller"
+      ],
+      "status": "Running",
+      "runtime": 60,
+      "premiered": "2015-06-24",
+      "officialSite": "http://www.usanetwork.com/mrrobot",
+      "schedule": {
+        "time": "22:00",
+        "days": [
+          "Wednesday"
+        ]
+      },
+      "rating": {
+        "average": 8.6
+      },
+      "weight": 98,
+      "network": {
+        "id": 30,
+        "name": "USA Network",
+        "country": {
+          "name": "United States",
+          "code": "US",
+          "timezone": "America/New_York"
+        }
+      },
+      "webChannel": null,
+      "externals": {
+        "tvrage": 42422,
+        "thetvdb": 289590,
+        "imdb": "tt4158110"
+      },
+      "image": {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/125/314759.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/125/314759.jpg"
+      },
+      "summary": "<p><b>Mr. Robot</b> follows Elliot, a young programmer who works as a cyber-security engineer by day and as a vigilante hacker by night. Elliot finds himself at a crossroads when the mysterious leader of an underground hacker group recruits him to destroy the firm he is paid to protect. Compelled by his personal beliefs, Elliot struggles to resist the chance to take down the multinational CEOs he believes are running (and ruining) the world.</p>",
+      "updated": 1526532010,
+      "_links": {
+        "self": {
+          "href": "http://api.tvmaze.com/shows/1871"
+        },
+        "previousepisode": {
+          "href": "http://api.tvmaze.com/episodes/1215797"
+        }
+      }
+    },
+    {
       "id": 806,
       "url": "http://www.tvmaze.com/shows/806/the-bold-and-the-beautiful",
       "name": "The Bold and the Beautiful",
@@ -104,10 +159,114 @@
           "href": "http://api.tvmaze.com/shows/806"
         },
         "previousepisode": {
-          "href": "http://api.tvmaze.com/episodes/1476031"
+          "href": "http://api.tvmaze.com/episodes/1476032"
         },
         "nextepisode": {
-          "href": "http://api.tvmaze.com/episodes/1476032"
+          "href": "http://api.tvmaze.com/episodes/1476034"
+        }
+      }
+    },
+    {
+      "id": 999,
+      "url": "http://www.tvmaze.com/shows/999/flash-gordon",
+      "name": "Flash Gordon",
+      "type": "Scripted",
+      "language": "English",
+      "genres": [
+        "Science-Fiction"
+      ],
+      "status": "Ended",
+      "runtime": 60,
+      "premiered": "2007-08-10",
+      "officialSite": null,
+      "schedule": {
+        "time": "21:00",
+        "days": []
+      },
+      "rating": {
+        "average": 6.1
+      },
+      "weight": 73,
+      "network": {
+        "id": 16,
+        "name": "Syfy",
+        "country": {
+          "name": "United States",
+          "code": "US",
+          "timezone": "America/New_York"
+        }
+      },
+      "webChannel": null,
+      "externals": {
+        "tvrage": 15536,
+        "thetvdb": 80441,
+        "imdb": "tt0959086"
+      },
+      "image": {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/6/16548.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/6/16548.jpg"
+      },
+      "summary": "<p>Placing a 21st century spin on a science fiction classic, SCI FI's contemporized version of <b>Flash Gordon</b> follows the all-new adventures of Flash and his companions, Dale Arden and Dr. Hans Zarkov. Ordinary people thrust into extraordinary circumstances, they find themselves as Earth's last line of defense against the forces of the merciless dictator Ming.</p>",
+      "updated": 1512969260,
+      "_links": {
+        "self": {
+          "href": "http://api.tvmaze.com/shows/999"
+        },
+        "previousepisode": {
+          "href": "http://api.tvmaze.com/episodes/98788"
+        }
+      }
+    },
+    {
+      "id": 528,
+      "url": "http://www.tvmaze.com/shows/528/the-flash",
+      "name": "The Flash",
+      "type": "Scripted",
+      "language": "English",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Science-Fiction"
+      ],
+      "status": "Ended",
+      "runtime": 60,
+      "premiered": "1990-09-20",
+      "officialSite": null,
+      "schedule": {
+        "time": "20:30",
+        "days": []
+      },
+      "rating": {
+        "average": 8.6
+      },
+      "weight": 71,
+      "network": {
+        "id": 2,
+        "name": "CBS",
+        "country": {
+          "name": "United States",
+          "code": "US",
+          "timezone": "America/New_York"
+        }
+      },
+      "webChannel": null,
+      "externals": {
+        "tvrage": 5781,
+        "thetvdb": 78650,
+        "imdb": "tt0098798"
+      },
+      "image": {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/4/11360.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/4/11360.jpg"
+      },
+      "summary": "<p>The Flash is Barry Allen, a police scientist, who was working one night during a terrible thunder storm when a bolt of lightning crashes through the lab window, electrocuting him. Barry survives and soon learns that he is now able to move at almost incomprehensible speed.</p>",
+      "updated": 1509496066,
+      "_links": {
+        "self": {
+          "href": "http://api.tvmaze.com/shows/528"
+        },
+        "previousepisode": {
+          "href": "http://api.tvmaze.com/episodes/47947"
         }
       }
     }

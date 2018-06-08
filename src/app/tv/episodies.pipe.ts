@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
 import {padStart} from 'lodash';
-import {Episode} from './tv.models';
+import {Episode} from '@models';
 
 @Pipe({
   name: 'episodies'

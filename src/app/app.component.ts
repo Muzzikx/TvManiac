@@ -16,6 +16,7 @@ export class AppComponent {
   menu: MenuItem[] = [
     {label: 'Home', path: '', exact: true},
     {label: 'TV shows', path: 'tv'},
+    {label: 'Settings', path: 'settings'},
     {label: 'Contact', path: 'contact'},
   ];
 

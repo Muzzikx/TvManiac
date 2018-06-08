@@ -1,6 +1,6 @@
 import {AbstractControl, ValidationErrors} from '@angular/forms';
 import {from, Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {delay, map} from 'rxjs/operators';
 
 export function usernameAvailableValidator(control: AbstractControl): Observable<ValidationErrors | null> {
   if (!control.value) {
@@ -13,6 +13,7 @@ export function usernameAvailableValidator(control: AbstractControl): Observable
       .then(res => res.json())
   )
     .pipe(
+      delay(1000),
       map(users => users.some(user => user.username === control.value)),
       map(userExist => userExist ? { usernameAvailable: true} : null)
     );

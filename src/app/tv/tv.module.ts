@@ -9,6 +9,7 @@ import {BookmarksModule} from '../bookmarks/bookmarks.module';
 import {ShowDetailsComponent} from './show-details/show-details.component';
 import {RouterModule} from '@angular/router';
 import {EpisodiesPipe} from './episodies.pipe';
+import {TvMazeEndpointsService} from './tv-maze-endpoints.service';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import {EpisodiesPipe} from './episodies.pipe';
     RouterModule
   ],
   providers: [
-    TvMazeService
+    TvMazeService,
+    TvMazeEndpointsService
   ],
   declarations: [SearchComponent, PosterComponent, ShowDetailsComponent, EpisodiesPipe]
 })

@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {ShowDetailsData, ShowDetailsParams} from '../../app-routing.module';
-import {TvMazeService} from '../tv-maze.service';
-import {ShowDetails} from '../tv.models';
+import {ShowDetailsData} from '../../app-routing.module';
+import {ShowDetails} from '@models';
 
 @Component({
   selector: 'tm-show-details',
