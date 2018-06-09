@@ -7,7 +7,7 @@
       <ng-template #bookmarksPlaceholder>
         <h2 class="h5 text-muted">loading bookmarks..</h2>
       </ng-template>
-      <div class="row">
+      <div class="row" [@staggerAnim]="bookmarks.length">
         <tm-poster *ngFor="let show of bookmarks" class="col col-6" [show]="show">
           <tm-bookmark-remove [show]="show"></tm-bookmark-remove>
         </tm-poster>
@@ -25,7 +25,7 @@
     </form>
 
     <div class="row">
-      <div *ngFor="let show of shows" class="col col-4">
+      <div *ngFor="let show of shows" class="col col-4" [@staggerAnim]="shows.length">
         <tm-poster [show]="show" #bookmarkedRef="bookmarked" [tmBookmarked]="show">
           <tm-bookmark-add *ngIf="!bookmarkedRef.isBookmarked" [show]="show"></tm-bookmark-add>
           <tm-bookmark-remove *ngIf="bookmarkedRef.isBookmarked" [show]="show"></tm-bookmark-remove>

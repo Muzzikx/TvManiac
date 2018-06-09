@@ -7,12 +7,33 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {debounceTime, filter, tap} from 'rxjs/operators';
 import {startsWithLetterValidator} from '../../shared/forms/starts-with-letter.validator';
 import {TvService} from '../tv.service';
+import {animate, query, stagger, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'tm-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
+  animations: [
+    trigger('staggerAnim', [
+        transition('*=>*', [
+          query(':enter', [
+            style({opacity: 0, transform: 'translateY(-50px)'}),
+            stagger(250, [
+              animate('0.2s', style({opacity: 1, transform: 'translateY(0)'}))
+            ])
+          ], {optional: true}),
+          query(':leave', [
+            style({opacity: 1, transform: 'translateY(0) scale(1)'}),
+            stagger(250, [
+              animate('0.2s', style({opacity: 1, transform: 'translateY(-500px) scale(0)'}))
+            ])
+          ], {optional: true})
+        ])
+      ]
+    )
+  ]
 })
+
 export class SearchComponent {
   shows: Show[] = [];
   bookmarks$: Observable<Show[]>;

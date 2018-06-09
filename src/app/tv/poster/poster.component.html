@@ -1,5 +1,5 @@
 <ng-container *ngIf="show">
-  <img [src]="posterUrl" class="img-fluid" alt="">
+  <img (click)="toggleImageState()" [src]="posterUrl" class="img-fluid" alt="" [@imgTrigger]="imageState">
   <ng-content></ng-content>
   <h2 class="h5" *ngIf="!isDetailsComponent">
     <a routerLink="/tv/{{show.id}}">{{show.name}}</a>

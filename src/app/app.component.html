@@ -4,7 +4,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li *ngFor="let item of menu"
-            class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: item.exact}">
+            class="nav-item animated" routerLinkActive="jello" [routerLinkActiveOptions]="{exact: item.exact}">
           <a class="nav-link" [routerLink]="item.path">{{item.label}}</a>
         </li>
       </ul>

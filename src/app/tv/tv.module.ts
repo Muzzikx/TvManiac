@@ -10,6 +10,7 @@ import {ShowDetailsComponent} from './show-details/show-details.component';
 import {RouterModule} from '@angular/router';
 import {EpisodiesPipe} from './episodies.pipe';
 import {TvMazeEndpointsService} from './tv-maze-endpoints.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import {TvMazeEndpointsService} from './tv-maze-endpoints.service';
     HttpClientModule,
     ReactiveFormsModule,
     BookmarksModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule
   ],
   providers: [
     TvMazeService,

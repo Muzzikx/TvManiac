@@ -9,6 +9,7 @@ import {ShowDetailsResolver} from './tv/show-details/show-details.resolver';
 import {ShowDetails} from '@models';
 import {HasRolesGuard} from './shared/has-roles.guard';
 import {LazyRoute} from '@angular/compiler';
+import {ClientAreaComponent} from './dynamic/client-area/client-area.component';
 
 export interface ShowDetailsParams {
   id: string;
@@ -36,6 +37,7 @@ const routes: Routes = [
     ]
   },
   {path: 'contact', component: ContactComponent},
+  {path: 'client', component: ClientAreaComponent},
   {path: 'settings', loadChildren: './settings/settings.module#SettingsModule'},
   {path: '**', component: Page404Component},
 ];

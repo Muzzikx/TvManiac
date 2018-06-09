@@ -2,8 +2,11 @@
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false
+import {EnvironmentSettings} from './environment-models';
+
+export const environment: EnvironmentSettings = {
+  production: false,
+  bookmarksEndpoint: 'http://localhost:3000/bookmarks',
 };
 
 /*
